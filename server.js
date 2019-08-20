@@ -6,6 +6,7 @@ import "./db/dbConnection";
 const server = new ApolloServer({
   typeDefs: schema,
   resolvers
+  // TODO
   // context: ({ req }) => {
   //   // get the auth token from the headers
   //   const token = req.headers.authentication || null;
