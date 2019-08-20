@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "build-babel": "npx babel -d ./build ./src -s",
+    "build-babel": "babel ./src -d ./build -s",
     "build": "npm run clean && npm run build-babel",
     "start": "npm run build && node ./build/server.js"
   },
@@ -29,7 +29,6 @@
   "dependencies": {
     "apollo-server": "^2.8.1",
     "apollo-server-express": "^2.8.1",
-    "babel-preset-env": "^1.7.0",
     "cors": "^2.8.5",
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
