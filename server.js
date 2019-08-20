@@ -1,20 +1,18 @@
-import cors from "cors";
-import express from "express";
-import { ApolloServer } from "apollo-server-express";
+import { ApolloServer } from "apollo-server";
 import schema from "./graphql/schema";
 import resolvers from "./graphql/resolvers";
 import "./db/dbConnection";
 
-const app = express();
-app.use(cors());
-
 const server = new ApolloServer({
   typeDefs: schema,
   resolvers
+  // context: ({ req }) => {
+  //   // get the auth token from the headers
+  //   const token = req.headers.authentication || null;
+  //   if (!token) console.error("you must be logged in");
+  // }
 });
 
-server.applyMiddleware({ app, path: "/graphql" });
-
-app.listen({ port: 4000 }, () => {
-  console.log("Apollo Server on http://localhost:4000/graphql");
+server.listen({ port: process.env.PORT || 4000 }).then(({ url }) => {
+  console.log(`Server ready at ${url}`);
 });
