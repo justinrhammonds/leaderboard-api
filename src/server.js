@@ -1,3 +1,5 @@
+import "core-js/stable";
+import "regenerator-runtime";
 import { ApolloServer } from "apollo-server";
 import schema from "./graphql/schema";
 import resolvers from "./graphql/resolvers";
