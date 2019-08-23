@@ -4,10 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "clean": "rm -rf build && mkdir build",
-    "build-babel": "npx babel ./src -d ./build -s",
-    "build": "npm run clean && npm run build-babel",
-    "start": "npm run build && node ./build/server.js"
+    "build": "npx babel ./src -d ./build -s",
+    "start": "npm run build && node build/server.js",
+    "dev": "nodemon --exec babel-node src/server.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +26,7 @@
     "nodemon": "^1.19.1"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
     "apollo-server": "^2.8.1",
     "apollo-server-express": "^2.8.1",
     "cors": "^2.8.5",
