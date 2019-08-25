@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf build mkdir build",
     "build-babel": "babel ./src -d ./build -s",
-    "build": "npm run build-babel",
+    "build": "npm run clean && npm run build-babel",
     "start": "npm run build && node ./build/server.js",
     "dev": "nodemon --exec babel-node src/server.js"
   },
