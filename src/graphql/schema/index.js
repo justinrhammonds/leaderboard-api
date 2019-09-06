@@ -8,6 +8,7 @@ const schema = gql`
   type Mutation {
     addScore(total: Int!, player: String!, date: String!): Score
     deleteScore(id: ID!): Score
+    updateLeaderboard(total: Int!, player: String!, date: String!): [Score]
   }
 
   type Score {
