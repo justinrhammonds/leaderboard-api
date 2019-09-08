@@ -3,11 +3,7 @@ import "dotenv/config";
 
 mongoose
   .connect(
-    `mongodb+srv://${process.env.MONGODB_USERNAME}:${
-      process.env.MONGODB_PASSWORD
-    }@devleaderboard-ajk6k.azure.mongodb.net/${
-      process.env.MONGODB_DATABASE
-    }?retryWrites=true&w=majority`,
+    `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_DATABASE}/?retryWrites=true&w=majority`,
     { useNewUrlParser: true }
   )
   .catch(error => {
