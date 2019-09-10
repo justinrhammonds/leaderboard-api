@@ -6,10 +6,11 @@ import resolvers from "./graphql/resolvers";
 import "./db/dbConnection";
 
 const server = new ApolloServer({
-  cors: {
-    origin: process.env.CORS_WHITELIST,
-    credentials: true
-  },
+  // cors: {
+  //   origin: process.env.CORS_WHITELIST,
+  //   credentials: true
+  // },
+  cors: true,
   typeDefs: schema,
   resolvers
 });
